@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   has_many :offers
   has_many :bookings
-  belongs_to :booking
 
   validates :username, presence: true, uniqueness: true
 end
