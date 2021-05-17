@@ -9,5 +9,16 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "components/button";
 @import "components/index";
+@import "components/navbar";
 @import "pages/index";
+
+body {
+  background-color: white;
+
+  h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+}
