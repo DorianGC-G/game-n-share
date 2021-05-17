@@ -1,13 +1,33 @@
 <%= render 'shared/navbar' %>
 
 <div class="container border border-dark col-10">
-  <div class="row">
-    <div class="col-6 border border-primary">
+  <div class="first-box row justify-content-between">
+    <div class="col-6 border border-primary d-flex-column">
       <h1>Louez une console en quelques clics</h1>
       <p>Louez des jeux, des manettes pour une après-midi, une journée, une semaine et enjoy ! </p>
+      <div class="form-group">
+        <div class="form-control my-2">
+          <label for="">Search item</label>
+        </div>
+        <div class="form-control my-2">
+          <label for="">Search location</label>
+        </div>
+        <div class="form-control my-2">
+          <label for="">Date</label>
+        </div>
+        <div class="btn btn-dark my-2">Lancer la recherche</div>
+
+        <%#= simple_form_for @offer do |f| %>
+          <%#= f.input :item %>
+          <%#= f.input :localisation %>
+          <%#= f.input :start_date %>
+          <%#= f.input :end_date %>
+          <%#= f.button :submit %>
+        <%# end %>
+      </div>
     </div>
-    <div class="col-3 border-warning">
-      <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/6100e76fe57f7d61512b05e536820b94.png?compress=1&resize=800x600", width: "500px" %>
+    <div class="col-5 border border-warning">
+      <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/6100e76fe57f7d61512b05e536820b94.png?compress=1&resize=800x600", width: "100%" %>
     </div>
   </div>
 </div>
