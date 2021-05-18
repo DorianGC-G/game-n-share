@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'offers/index', to: 'offers#index'
+  get 'offers', to: 'offers#index'
   get 'offers/:id', to: 'offers#show'
   devise_for :users
   root to: 'pages#home'
