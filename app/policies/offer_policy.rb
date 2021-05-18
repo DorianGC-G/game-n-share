@@ -6,16 +6,28 @@ class OfferPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    true
-  end
-  
   def show?
     return true
   end
 
+  def new?
+    show?
+  end
+
   def create?
-    new?
+    show?
+  end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    edit?
+  end
+
+  def destroy?
+    edit?
   end
 
 end
