@@ -1,9 +1,4 @@
 <div class="container col-10">
   <h1>Toutes les offres disponibles :</h1>
-
-  <div  class="offers-container">
-    <% @offers.each do |offer| %>
-      <%= render "shared/simplecards", offer: offer %>
-    <% end %>
-  </div>
+    <%= render "shared/simple_cards_index", offers: @offers %>
 </div>
