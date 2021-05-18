@@ -28,5 +28,8 @@
       <div class="text"><%= @offer.price_per_day %></div>
     </div>
   </div>
-  <div class="col-4">khugyfhgcvh</div>
+  <div class="col-4">
+  <%= link_to "Modifier", edit_offer_path(@offer) %>
+  <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" } %>
+  </div>
 </div>
