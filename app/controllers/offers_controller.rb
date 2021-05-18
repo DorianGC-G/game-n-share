@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @offers = policy_scope(Offer).all
   end
 
   def show
@@ -8,9 +8,19 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
+  def new
+    @offer = Offer.new
+    authorize @offer
+  end
+
   def create
     @offer = Offer.new(offer_params)
     authorize @offer
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
   end
 
   private
