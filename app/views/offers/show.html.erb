@@ -1,2 +1,80 @@
-<h1>Offers#show</h1>
-<p>Find me in app/views/offers/show.html.erb</p>
+<div class="show-container">
+  <div class="col-5">
+    <%= image_tag "https://images.frandroid.com/wp-content/uploads/2020/01/ps4-pro-soldes.jpg", width: "100%" %>
+    <div class="btn btn-dark my-2 flex-grow-1">Je loue</div>
+  </div>
+  <div class="col-3">bla</div>
+  <div class="col-4">khugyfhgcvh</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="lol" style="height: 10px; background-color: red"></div>
+
+==========================================================================
+
+<h1><%= @offer.title%></h1>
+
+<div class="container d-flex col-10 align-items-start">
+
+<div class="col-5 mb-3 border border-warning">
+  <div class="row">
+    <%= image_tag "https://images.frandroid.com/wp-content/uploads/2020/01/ps4-pro-soldes.jpg", width: "100%" %>
+  </div>
+  <div class= "row">
+    <div class="btn btn-dark my-2 flex-grow-1">Je loue</div>
+  </div>
+</div>
+
+<div class="col-3 border border-primary p-1">
+  <div class="row">
+    <div class="bg-secondary text-white mb-1">
+      <%= @offer.location %>
+    </div>
+    <div class="bg-secondary text-white mb-1">
+      <%= @offer.start_date %>
+    </div>
+    <div class="bg-secondary text-white mb-1">
+      <%= @offer.end_date %>
+    </div>
+    <div class="bg-secondary text-white mb-1">
+      <%= @offer.item %>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Description</h5>
+      <div class="card-text"><%= @offer.description %></div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-3 border border-danger">
+    <div class="card"></div>
+  </div>
+</div>
