@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @offers = policy_scope(Offer).where(user_id: current_user.id)
   end
 
+  def success
+  end
+
   def home
     @offers = Offer.last(6).reverse
   end
