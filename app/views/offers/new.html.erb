@@ -10,10 +10,6 @@
               <%= f.input :description %>
               <%= f.input :price_per_day, as: :integer %>
               <%= f.input :location %>
-              <%#= f.input :start_date, as: :string, start_year: DateTime.now,
-                                      order: [:day, :month, :year] %>
-              <%#= f.input :end_date, as: :string, start_year: Date.today,
-                                    order: [:day, :month, :year] %>
               <%= f.input :start_date, as: :date, html5: true %>
               <%= f.input :end_date, as: :date, html5: true %>
               <%= f.input :photo, as: :file %>
