@@ -1,4 +1,10 @@
-<div class="container col-10">
-  <h1>Offres disponibles :</h1>
-    <%= render "shared/simple_cards_index", offers: @offers %>
+<div class="container col-10 d-flex align-items-center">
+  <div class=“first-box ”>
+    <div class=col-12">
+      <h1>Offres disponibles :</h1>
+      <div class=“container my”>
+        <%= render "shared/simple_cards_index", offers: @offers %>
+      </div>
+    </div>
+  </div>
 </div>
