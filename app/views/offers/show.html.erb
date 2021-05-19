@@ -1,45 +1,68 @@
-<h1 class="mt-5 mb-5"><%= @offer.title%></h1>
+<div class="container col-10 d-flex align-items-center">
+  <div class=“p-0 first-box ”>
+    <h1><%= @offer.title %></h1>
+    <div class="container p-0 col-12 d-flex">
+      <div class="p-0 col-6">
+        <div class="img">
+          <% if @offer.photo.attached? %>
+            <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
+          <% else %>
+            <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
+          <% end %>
+        </div>
 
-<div class="show-container">
-  <div class="col-5">
-    <% if @offer.photo.attached? %>
-      <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
-    <% else %>
-      <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
-    <% end %>
-    <div class="btn btn-dark my-2 wide-btn">Je loue</div>
-  </div>
+        <% if !policy(@offer).edit? %>
+          <div class="btn btn-dark p-3 my-4 wide-btn">Je réserve</div>
+        <% end %>
 
-  <div class="col-3">
-    <div class="bg-secondary text-white mb-1 offer-token">
-      <%= @offer.location %>
-    </div>
-     <div class="bg-secondary text-white mb-1 offer-token">
-      <%= @offer.start_date %>
-    </div>
-    <div class="bg-secondary text-white mb-1 offer-token">
-      <%= @offer.end_date %>
-    </div>
-    <div class="bg-secondary text-white mb-1 offer-token">
-      <%= @offer.item %>
-    </div>
-    <div>
-      <h5 class="title">Description</h5>
-      <div class="text"><%= @offer.description %></div>
-    </div>
-    <div>
-      <h5 class="title">Prix à la journée</h5>
-      <div class="text"><%= @offer.price_per_day %></div>
-    </div>
-  </div>
-  <div class="col-4">
+      </div>
 
-  <% if policy(@offer).edit? %>
-    <%= link_to "Modifier", edit_offer_path(@offer) %>
-  <% end %>
-  <% if policy(@offer).destroy? %>
-    <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" } %>
-  <% end %>
+      <div class="all-grey-info col-3 mx-3">
+        <div class="grey-info d-flex row align-items-center">
+          <i class="fas fa-user"></i>
+          <div class="div-txt">
+            <p><%= current_user[:username] %></p>
+          </div>
+        </div>
+        <div class="grey-info d-flex row align-items-center">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="div-txt">
+            <p><%= @offer.location %></p>
+          </div>
+        </div>
 
+        <% if @offer.start_date %>
+          <div class="grey-info d-flex row align-items-center">
+            <i class="far fa-calendar-alt"></i>
+              <p><%= @offer.start_date.strftime('%d/%m/%Y') %></p>
+          </div>
+        <% end %>
+        <% if @offer.start_date %>
+          <div class="grey-info d-flex row align-items-center">
+            <i class="far fa-calendar-alt"></i>
+            <p><%= @offer.end_date.strftime('%d/%m/%Y') %></p>
+          </div>
+        <% end %>
+        <div class="grey-info d-flex row align-items-center">
+          <i class="fas fa-gamepad"></i>
+          <p><%= @offer.item %></p>
+        </div>
+
+        <div class="d-flex row align-items-center">
+          <div>
+            <h4>Description : </h4>
+            <p><%= @offer.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+

@@ -15,10 +15,26 @@
 body {
   background-color: white;
 
-  h1, h2 {
+  h1, h2, h4 {
     font-family: sans-serif;
     font-weight: bold;
   }
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.first-box {
+  padding: 30px;
+
+  p {
+    margin-bottom: 40px;
+  }
+}
+
+.second-box {
+  padding: 30px;
 }
 
 .offers-container {
