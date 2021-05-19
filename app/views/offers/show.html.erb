@@ -13,9 +13,9 @@
 
 
         <% if !policy(@offer).edit? %>
-          <%= link_to "Je reserve", success_path %>
-            <div class="btn btn-dark p-3 my-4 wide-btn"></div>
-          <% end %>
+          <div class="btn btn-dark p-3 my-4 wide-btn">
+            <%= link_to "Je reserve", success_path %>
+          </div>
         <% end %>
 
       </div>
