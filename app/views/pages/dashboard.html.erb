@@ -1,3 +1,10 @@
-<% @offers.each do |offer|%>
-  <%= offer.title %>
-<% end %>
+<div class="container col-10 d-flex align-items-center">
+  <div class=“first-box ”>
+    <div class=col-12">
+      <h1>Mes annonces :</h1>
+      <div class=“container my”>
+        <%= render "shared/simple_cards_index", offers: @offers %>
+      </div>
+    </div>
+  </div>
+</div>
