@@ -6,13 +6,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @offers = Offer.all
-
-    # if params[:query].present?
-    #   sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
-    #   @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @offers = Offer.all
-    # end
+    @offers = Offer.last(6).reverse
   end
 end

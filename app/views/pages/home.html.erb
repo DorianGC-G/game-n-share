@@ -16,11 +16,13 @@
       </div>
 
     </div>
-    <div class="col-12 col-lg-5 d-flex align-items-center">
+    <div class="col-lg-5 d-none d-lg-block align-items-center">
       <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/6100e76fe57f7d61512b05e536820b94.png?compress=1&resize=800x600", width: "100%" %>
     </div>
   </div>
 </div>
+
 <div class="container">
+  <h2>Les dernières offres</h2>
   <%= render "shared/simple_cards_index", offers: @offers %>
 </div>

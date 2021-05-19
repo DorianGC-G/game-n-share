@@ -15,7 +15,7 @@
 body {
   background-color: white;
 
-  h1 {
+  h1, h2 {
     font-family: sans-serif;
     font-weight: bold;
   }
@@ -25,5 +25,5 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1vw;
-  // margin: 0 4vw;
+  margin: 20px 0;
 }
