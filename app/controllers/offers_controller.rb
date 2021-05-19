@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   def index
-    @offers = policy_scope(Offer).all
+    @offers = policy_scope(Offer)
 
     if params[:query].present?
       sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
