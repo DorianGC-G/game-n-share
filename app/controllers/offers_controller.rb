@@ -1,6 +1,16 @@
 class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer).all
+
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      if @offers.count == 0
+        redirect_to root_path
+      end
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
