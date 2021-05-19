@@ -11,8 +11,11 @@
           <% end %>
         </div>
 
+
         <% if !policy(@offer).edit? %>
-          <div class="btn btn-dark p-3 my-4 wide-btn">Je réserve</div>
+          <%= link_to "Je reserve", success_path %>
+            <div class="btn btn-dark p-3 my-4 wide-btn"></div>
+          <% end %>
         <% end %>
 
       </div>
