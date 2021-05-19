@@ -1,6 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
   validates :title, :item, :description, :location, presence: true
   validates :price_per_day, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :start_date, :end_date, presence: true
