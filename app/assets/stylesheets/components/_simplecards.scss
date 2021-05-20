@@ -5,32 +5,38 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-}
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  // margin-top: 8px;
-  padding: 0;
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
 
 .card-product .card-product-infos {
-  // padding: 16px;
   height: 100%;
-  padding: 0;
+  padding: 15px;
+  h2 {
+    margin-bottom: 8px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.offers-container {
+  padding: 10px;
 }
