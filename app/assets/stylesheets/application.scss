@@ -28,21 +28,22 @@ body {
 .first-box {
   padding: 30px;
 
-  p {
-    margin-bottom: 40px;
-  }
+  // p {
+  //   margin-top: 20px;
+  //   margin-bottom: 50px;
+  // }
 }
 
 .second-box {
   padding: 30px;
 }
 
-.offers-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1vw;
-  margin: 20px 0;
-}
+// .offers-container {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-gap: 1vw;
+//   margin: 30px 0;
+// }
 
 .btn {
   a {
@@ -51,7 +52,6 @@ body {
     &:hover {
       text-decoration: none;
     }
-}
-
+  }
 }
 

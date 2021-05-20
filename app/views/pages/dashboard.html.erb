@@ -1,10 +1,10 @@
 <div class="container col-10 d-flex align-items-center">
-  <div class=“first-box ”>
-    <div class=col-12">
-      <h1>Mes annonces :</h1>
-      <div class=“container my”>
-        <%= render "shared/simple_cards_index", offers: @offers %>
-      </div>
+  <div class="first-box">
+    <div class="container">
+      <h1>Dashboard</h1>
+      <h2>Mes annonces</h2>
+      <%= render "shared/simple_cards_index", offers: @offers %>
+      <h2>Mes réservations</h2>
     </div>
   </div>
 </div>
