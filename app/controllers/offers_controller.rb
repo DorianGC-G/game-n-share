@@ -21,6 +21,13 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @booking = Booking.new
+    @bookings       = Booking.where(offer_id: @offer.id)
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
   end
 
   def new
