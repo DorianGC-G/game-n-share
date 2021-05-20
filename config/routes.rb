@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'pages#dashboard'
   get 'success', to: 'pages#success'
+
+  resources :offers do
+      resources :bookings, only: [ :new, :create]
+  end
+
 end
