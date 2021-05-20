@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :offer
   belongs_to :user
   validate :end_date_after_start_date
-  validates :start_date, :end_date, :overlap => true
+  validates :start_date, :end_date, :overlap => {:scope => "offer_id"}
 
   private
 
