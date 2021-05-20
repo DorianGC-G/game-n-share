@@ -3,4 +3,8 @@
     <h1>Mes annonces</h1>
     <%= render "shared/simple_cards_index", offers: @offers %>
   </div>
+  <div class="first-box px-0">
+    <h1>Mes dernières demandes</h1>
+    <%= render "shared/reservation_cards", offers: @offers %>
+  </div>
 </div>

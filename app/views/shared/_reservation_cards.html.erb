@@ -1,0 +1,25 @@
+<div  class="row justify-content-left offers-container">
+  <% offers.each do |offer| %>
+    <% offer.bookings.each do |booking| %>
+      <div class="card" style="width: 18rem;">
+        <% if offer.photo.attached? %>
+          <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
+        <% else %>
+          <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", crop: :fill %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to offer.title.capitalize, offer_path(offer) %></h5>
+          <p>Par: <%= booking.user.username %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Du: <%= booking.start_date.strftime('%d/%m/%Y') %></li>
+          <li class="list-group-item">Au: <%= booking.end_date.strftime('%d/%m/%Y') %></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="btn btn-success">Accepter</a>
+          <a href="#" class="btn btn-danger">Refuser</a>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
