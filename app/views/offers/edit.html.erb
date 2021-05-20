@@ -1,21 +1,27 @@
-<h1>Edit</h1>
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center my-3">
+    <div class="col-10 col-md-8 col-lg-6">
+      <h1>Edit</h1>
 
-<%= @offer.title %>
+      <%= @offer.title %>
 
-<%= simple_form_for @offer do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :item %>
-    <%= f.input :description %>
-    <%= f.input :price_per_day, as: :integer %>
-    <%= f.input :location %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
+      <%= simple_form_for @offer do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :item %>
+          <%= f.input :description %>
+          <%= f.input :price_per_day, as: :integer %>
+          <%= f.input :location %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
 
-  </div>
-  <div class="d-flex justify-content-between">
-    <div class="form-actions">
-      <%= f.button :submit, "Envoyer", class: "btn btn-dark my-auto" %>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="form-actions">
+            <%= f.button :submit, "Envoyer", class: "btn btn-dark my-auto" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
