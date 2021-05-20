@@ -5,8 +5,13 @@ class OffersController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      redirect_to root_path if @offers.count.zero?
-      # => AJOUTER MESSAGE "RIEN NE CORRESPOND A VOTRE RECHERCHE"
+      if @offers.count == 0 
+        redirect_to root_path
+        flash.alert = "Désolé, aucun résultat!"
+      end
+    elsif params[:query] == ''
+      redirect_to root_path
+      flash.alert = "Recherche vide!"
     else
       @offers = Offer.all
     end
