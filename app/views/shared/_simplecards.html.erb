@@ -1,13 +1,16 @@
-  <div class="card-product">
-    <% if offer.photo.attached? %>
-      <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
-    <% else %>
-      <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
-    <% end %>
-    <div class="card-product-infos">
-      <h2><%= link_to offer.title, offer_path(offer) %></h2>
-      <p><%= offer.item %></p>
-      <p><%= offer.location %></p>
-      <p>Price per day: <%= offer.price_per_day %>€</p>
+  <div class="card_global col-10 col-md-6 col-lg-4 p-2">
+    <div class="card-product">
+      <% if offer.photo.attached? %>
+        <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
+      <% else %>
+        <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
+      <% end %>
+      <div class="card-product-infos">
+        <h2><%= link_to offer.title, offer_path(offer) %></h2>
+        <p><%= offer.item %></p>
+        <p><%= offer.location %></p>
+        <p>Price per day: <%= offer.price_per_day %>€</p>
+      </div>
     </div>
   </div>
+

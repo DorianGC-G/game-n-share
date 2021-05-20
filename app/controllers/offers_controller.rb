@@ -5,9 +5,8 @@ class OffersController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      if @offers.count == 0
-        redirect_to root_path
-      end
+      redirect_to root_path if @offers.count.zero?
+      # => AJOUTER MESSAGE "RIEN NE CORRESPOND A VOTRE RECHERCHE"
     else
       @offers = Offer.all
     end
@@ -59,5 +58,4 @@ class OffersController < ApplicationController
   def offer_params
     params.require(:offer).permit(:title, :item, :description, :price_per_day, :location, :start_date, :end_date, :photo)
   end
-
 end
