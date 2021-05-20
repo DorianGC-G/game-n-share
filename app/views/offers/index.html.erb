@@ -2,7 +2,29 @@
   <div class="first-box px-0">
     <h1>Offres disponibles</h1>
 
-    <%= render "shared/form", offers: @offers %>
+    <div class="form-group">
+      <%= form_tag offers_path, method: :get do %>
+        <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+                          placeholder: "Que cherchez-vous ?" %>
+        <%= text_field_tag :queryLocation,
+                          params[:queryLocation],
+                          class: "form-control",
+                          placeholder: "Oussa ?" %>
+        <%= number_field_tag :queryPrice,
+                          params[:queryPrice],
+                          class: "form-control",
+                          placeholder: "Pour combien de pépettes max par jour ?" %>
+        <%= date_field_tag :queryStartDate,
+                          params[:queryStartDate],
+                          class: "form-control" %>
+        <%= date_field_tag :queryEndDate,
+                          params[:queryEndDate],
+                          class: "form-control" %>
+        <%= submit_tag "Chercher", class: "btn btn-dark mt-3 " %>
+      <% end %>
+    </div>
 
     <%= render "shared/sorting", offers: @offers %>
 
