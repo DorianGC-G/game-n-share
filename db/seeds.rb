@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Offer.destroy_all
 User.destroy_all
-clement = User.create!(username: "Clément", password: "weshgros69", email: "clement@wesh.com")
-dorian = User.create!(username: "Dorian", password: "weshgros69", email: "dorian@wesh.com")
-manon = User.create!(username: "Manon", password: "weshgros69", email: "manon@wesh.com")
-agathe = User.create!(username: "Agathe", password: "weshgros69", email: "agathe@wesh.com")
+clement = User.create!(username: "Clément", password: "azerty", email: "clement@wesh.com")
+dorian = User.create!(username: "Dorian", password: "azerty", email: "dorian@wesh.com")
+manon = User.create!(username: "Manon", password: "azerty", email: "manon@wesh.com")
+agathe = User.create!(username: "Agathe", password: "azerty", email: "agathe@wesh.com")
 Offer.create!(title: "PS4 à louer", item: "PS4", description: "Ps4 avec des rayures", price_per_day: 15, user_id: manon.id, location: "Clichy", start_date: Date.new(2021,5,18), end_date: Date.new(2022,2,28))
 Offer.create!(title: "PS5 bon etat", item: "PS5", description: "dispo à paris du 5 mars jusqu'au 51 avril", price_per_day: 18, user_id: manon.id, location: "Clichy", start_date: Date.new(2021,5,19), end_date: Date.new(2021,6,29))
 Offer.create!(title: "Switch + 40 jeux", item: "Switch", description: "Switch avec plein de jeux", price_per_day: 40, user_id: manon.id, location: "Clichy", start_date: Date.new(2021,5,19), end_date: Date.new(2021,12,29))
