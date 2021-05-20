@@ -7,6 +7,7 @@ class OffersController < ApplicationController
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
       if @offers.count == 0
         redirect_to root_path
+        flash.alert = "Désolé, aucun résultat!"
       end
     else
       @offers = Offer.all
