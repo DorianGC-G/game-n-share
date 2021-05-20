@@ -5,19 +5,17 @@
       <div class="p-0 col-6">
         <div class="img">
           <% if @offer.photo.attached? %>
-            <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
+            <%= cl_image_tag @offer.photo.key, width: 800, crop: :fill, class: "image_preview" %>
           <% else %>
             <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
           <% end %>
         </div>
-
 
         <% if !policy(@offer).edit? %>
           <div class="btn btn-dark p-3 my-4 wide-btn">
             <%= link_to "Je reserve", success_path %>
           </div>
         <% end %>
-
       </div>
 
       <div class="all-grey-info col-3 mx-3">
