@@ -15,7 +15,8 @@
         <% if !policy(@offer).edit? %>
           <div>
             <%= simple_form_for [@offer, @booking] do |f| %>
-              <%= f.input :status %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
               <%= f.submit "Je reserve", class: "btn btn-dark p-3 my-4 wide-btn" %>
             <% end %>
           </div>
