@@ -1,4 +1,4 @@
-<div  class="row justify-content-left offers-container">
+<div class="row justify-content-left offers-container">
   <% offers.each do |offer| %>
     <% offer.bookings.each do |booking| %>
       <div class="card" style="width: 18rem;">
@@ -16,8 +16,14 @@
           <li class="list-group-item">Au: <%= booking.end_date.strftime('%d/%m/%Y') %></li>
         </ul>
         <div class="card-body">
-          <a href="#" class="btn btn-success">Accepter</a>
-          <a href="#" class="btn btn-danger">Refuser</a>
+          <% if booking.status == true %>
+            <h5>Acceptée!</h5>
+          <% elsif booking.status == false %>
+            <h5>Refusée</h5>
+          <% else %>
+            <%= link_to "Accepter", booking_path(booking, params: {accept: "accepted"}), method: :patch, class: "btn btn-success" %>
+            <%= link_to "Refuser", booking_path(booking, params: {accept: "declined"}), method: :patch, class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
     <% end %>
