@@ -21,6 +21,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @user = @offer.user
+    @booking = Booking.new
   end
 
   def new

@@ -17,7 +17,14 @@
             <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" }, class: "btn btn-dark p-3 my-4 ml-2 flex-fill" %>
           </div>
         <% else %>
-            <%= link_to "Je réserve", success_path, class: "btn btn-dark p-3 my-4 wide-btn" %>
+          <div>
+            <%= simple_form_for [@offer, @booking] do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.submit "Je réserve", success_path, class: "btn btn-dark p-3 my-4 wide-btn" %>
+            <% end %>
+          </div>
+          <%# new_offer_booking_path %>
         <% end %>
       </div>
 
@@ -62,11 +69,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
