@@ -9,7 +9,7 @@ class OffersController < ApplicationController
         redirect_to root_path
         flash.alert = "Désolé, aucun résultat!"
       end
-    elsif params[:query].present? == false
+    elsif params[:query] == ''
       redirect_to root_path
       flash.alert = "Recherche vide!"
     else
