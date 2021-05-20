@@ -50,30 +50,28 @@ class OffersController < ApplicationController
   private
 
   def searching
-    if params[:query].present?
-      sql_query = "title ILIKE :query OR item ILIKE :query"
-      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      if params[:queryLocation].present?
-        sql_query_location = "location ILIKE :queryLocation"
-        @offers = @offers.where(sql_query_location, queryLocation: "%#{params[:queryLocation]}%")
-      end
-      if params[:queryPrice].present?
-        sql_query_price = "price_per_day > :queryPrice"
-        @offers = @offers.where(sql_query_price, queryPrice: params[:queryPrice])
-      end
 
-
-
-      if @offers.count.zero?
-        # redirect_to offers_path
-        flash.alert = "Désolé, aucun résultat ne correspond à cette recherche!"
-      end
-    elsif params[:query] == ""
-      # redirect_to offers_path
+    if (params[:query] == "") & (params[:queryLocation] == "") & (params[:queryPrice] == "")
+      redirect_to offers_path
       flash.alert = "Recherche vide !"
     else
       @offers = Offer.all
     end
+
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR item ILIKE :query"
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+    end
+    if params[:queryLocation].present?
+      sql_query_location = "location ILIKE :queryLocation"
+      @offers = @offers.where(sql_query_location, queryLocation: "%#{params[:queryLocation]}%")
+    end
+    if params[:queryPrice].present?
+      sql_query_price = "price_per_day > :queryPrice"
+      @offers = @offers.where(sql_query_price, queryPrice: params[:queryPrice])
+    end
+
+    flash.alert = "Désolé, aucun résultat ne correspond à cette recherche!" if @offers.count.zero?
   end
 
   def sorting
@@ -82,8 +80,6 @@ class OffersController < ApplicationController
       @offers = @offers.order(:price_per_day)
     when "price-down"
       @offers = @offers.order(:price_per_day).reverse
-    when "location"
-      @offers = @offers.order(:location)
     end
   end
 

@@ -16,13 +16,11 @@
                           params[:queryPrice],
                           class: "form-control",
                           placeholder: "Pour combien de pépettes max par jour ?" %>
-        <%= date_field_tag :queryStartDate,
-                          params[:queryStartDate],
-                          class: "form-control" %>
-        <%= date_field_tag :queryEndDate,
-                          params[:queryEndDate],
-                          class: "form-control" %>
-        <%= submit_tag "Chercher", class: "btn btn-dark mt-3 " %>
+        <div class="my-3">
+          <%= submit_tag "Chercher", class: "btn btn-dark" %>
+          <%= link_to "Reset", offers_path, class: "btn btn-dark" %>
+        </div>
+
       <% end %>
     </div>
 
