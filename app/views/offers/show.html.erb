@@ -11,11 +11,13 @@
           <% end %>
         </div>
 
-
-        <% if !policy(@offer).edit? %>
-          <div class="btn btn-dark p-3 my-4 wide-btn">
-            <%= link_to "Je reserve", success_path %>
+        <% if policy(@offer).edit? %>
+          <div class="row m-0 justify-content-between">
+            <%= link_to "Modifier", edit_offer_path(@offer), class: "btn btn-dark p-3 my-4 mr-2 flex-fill" %>
+            <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" }, class: "btn btn-dark p-3 my-4 ml-2 flex-fill" %>
           </div>
+        <% else %>
+            <%= link_to "Je réserve", success_path, class: "btn btn-dark p-3 my-4 wide-btn" %>
         <% end %>
 
       </div>
