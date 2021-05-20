@@ -1,6 +1,6 @@
 <div class="container col-10 d-flex align-items-center">
   <div class="first-box row justify-content-between">
-    <div class="col-12 col-lg-6 d-flex-column">
+    <div class="col-12 col-lg-6 d-flex-column py-4 px-0">
       <h1>Louez une console en quelques clics</h1>
       <p>Louez des jeux, des manettes pour une après-midi, une journée, une semaine et enjoy ! </p>
 
@@ -22,7 +22,12 @@
   </div>
 </div>
 
-<div class="container">
-  <h2>Les dernières offres</h2>
-  <%= render "shared/simple_cards_index", offers: @offers %>
+<div class="container col-10 d-flex align-items-center">
+  <div class="first-box row">
+    <div class="container p-0">
+      <h2>Les dernières offres</h2>
+      <%= render "shared/simple_cards_index", offers: @offers %>
+    </div>
+  </div>
 </div>
+
