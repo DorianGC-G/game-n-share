@@ -1,6 +1,11 @@
 <div class="container">
   <div class="first-box px-0">
     <h1>Offres disponibles</h1>
+
+    <%= render "shared/form", offers: @offers %>
+
+    <%= render "shared/sorting", offers: @offers %>
+
     <%= render "shared/simple_cards_index", offers: @offers %>
   </div>
 </div>

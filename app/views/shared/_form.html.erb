@@ -1,0 +1,9 @@
+<div class="form-group">
+  <%= form_tag offers_path, method: :get do %>
+    <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control",
+                        placeholder: "Que cherchez-vous ?" %>
+    <%= submit_tag "Chercher", class: "btn btn-dark mt-3 " %>
+  <% end %>
+</div>

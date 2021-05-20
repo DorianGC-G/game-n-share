@@ -5,7 +5,7 @@ class OffersController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      if @offers.count == 0 
+      if @offers.count.zero?
         redirect_to root_path
         flash.alert = "Désolé, aucun résultat!"
       end
@@ -14,6 +14,14 @@ class OffersController < ApplicationController
       flash.alert = "Recherche vide!"
     else
       @offers = Offer.all
+    end
+
+    if params[:sort] == "price-up"
+      @offers = @offers.order(:price_per_day)
+    elsif params[:sort] == "price-down"
+      @offers = @offers.order(:price_per_day).reverse
+    elsif params[:sort] == "location"
+      @offers = @offers.order(:location)
     end
   end
 
