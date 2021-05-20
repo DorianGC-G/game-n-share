@@ -20,7 +20,6 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     authorize @offer
-    @user = @offer.user
     @booking = Booking.new
   end
 
