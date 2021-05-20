@@ -19,8 +19,8 @@
         <% else %>
           <div class="row m-0 justify-content-between">
             <%= simple_form_for [@offer, @booking] do |f| %>
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
+              <%= f.input :start_date, as: :date, html5: true%>
+              <%= f.input :end_date, as: :date, html5: true %>
               <%= f.button :submit, "Je réserve", class: "btn btn-dark p-3 my-4 mr-2 flex-fill" %>
             <% end %>
           </div>

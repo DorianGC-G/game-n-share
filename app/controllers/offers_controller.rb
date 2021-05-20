@@ -5,7 +5,7 @@ class OffersController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR item ILIKE :query OR description ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      if @offers.count == 0 
+      if @offers.count == 0
         redirect_to root_path
         flash.alert = "Désolé, aucun résultat!"
       end
@@ -20,7 +20,6 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     authorize @offer
-    @user = @offer.user
     @booking = Booking.new
   end
 
@@ -56,7 +55,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @offer.destroy
-    redirect_to offers_path
+    redirect_to dashboard_path
   end
 
   private
