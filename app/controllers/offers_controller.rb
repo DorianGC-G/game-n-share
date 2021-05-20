@@ -8,7 +8,6 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     authorize @offer
-    @user = @offer.user
     @booking = Booking.new
   end
 
@@ -44,7 +43,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @offer.destroy
-    redirect_to offers_path
+    redirect_to dashboard_path
   end
 
   private
