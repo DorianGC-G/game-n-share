@@ -5,7 +5,7 @@
       <% else %>
         <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", width: "100%" %>
       <% end %>
-      <div class="card-product-infos">
+      <div class="card-product-infos align-self-center flex-fill bd-highlight">
         <h2><%= link_to offer.title, offer_path(offer) %></h2>
         <p><%= offer.item %></p>
         <p><%= offer.location %></p>
