@@ -19,16 +19,22 @@
   width: 100%;
 }
 
+.all-grey-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .grey-info {
   display: flex;
   height: 60px;
   background-color: rgb(170, 170, 170);
-  margin-bottom: 16px;
 
   i {
     margin: auto;
     color: grey;
     font-size: xx-large;
+    padding-left: 20px
   }
 }
 
@@ -37,7 +43,7 @@
 }
 
 #grey-info-text {
-  margin-left: 8px;
+  padding-left: 40px;
   font-family: sans-serif;
   font-size: large;
   font-weight: bold;
@@ -46,4 +52,11 @@
 
 .offer-title {
   margin-bottom: 25px;
+}
+
+.description {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

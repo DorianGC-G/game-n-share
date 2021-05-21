@@ -72,7 +72,7 @@ class OffersController < ApplicationController
       @offers = @offers.where(sql_query_location, queryLocation: "%#{params[:queryLocation]}%")
     end
     if params[:queryPrice].present?
-      sql_query_price = "price_per_day > :queryPrice"
+      sql_query_price = "price_per_day < :queryPrice"
       @offers = @offers.where(sql_query_price, queryPrice: params[:queryPrice])
     end
 
