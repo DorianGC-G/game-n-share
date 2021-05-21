@@ -18,8 +18,10 @@ class BookingsController < ApplicationController
     authorize @booking
     if params[:accept] == "accepted"
       @booking.status = true
+      flash.notice = "Demande acceptée!"
     elsif params[:accept] == "declined"
       @booking.status = false
+      flash.notice = "Demande refusée!"
     end
     @booking.save!
     redirect_to dashboard_path
