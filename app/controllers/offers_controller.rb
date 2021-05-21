@@ -58,7 +58,7 @@ class OffersController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "title ILIKE :query OR item ILIKE :query"
+      sql_query = "title ILIKE :query OR item ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
     end
     if params[:queryLocation].present?
