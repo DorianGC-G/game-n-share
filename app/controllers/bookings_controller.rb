@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     elsif params[:accept] == "declined"
       @booking.status = false
     end
-    @booking.save
+    @booking.save!
     redirect_to dashboard_path
   end
 

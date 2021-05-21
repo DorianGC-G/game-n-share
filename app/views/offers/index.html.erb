@@ -1,6 +1,31 @@
 <div class="container">
   <div class="first-box px-0">
     <h1>Offres disponibles</h1>
+
+    <div class="form-group">
+      <%= form_tag offers_path, method: :get do %>
+        <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control my-2",
+                          placeholder: "Que cherchez-vous ?" %>
+        <%= text_field_tag :queryLocation,
+                          params[:queryLocation],
+                          class: "form-control my-2",
+                          placeholder: "Oussa ?" %>
+        <%= number_field_tag :queryPrice,
+                          params[:queryPrice],
+                          class: "form-control my-2",
+                          placeholder: "Pour combien de pépettes max par jour ?" %>
+        <div class="my-3">
+          <%= submit_tag "Chercher", class: "btn btn-dark" %>
+          <%= link_to "Reset", offers_path, class: "btn btn-dark" %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <%= render "shared/sorting", offers: @offers %>
+
     <%= render "shared/simple_cards_index", offers: @offers %>
   </div>
 </div>
