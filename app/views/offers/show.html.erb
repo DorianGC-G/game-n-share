@@ -2,17 +2,12 @@
   <div class="first-box px-0">
     <h2 class="offer-title d-flex"><%= @offer.title %></h2>
     <div class="container p-0 col-12 d-flex">
-      <div class="p-0 col-5 d-flex">
-
-        <div class="img d-flex">
-          <% if @offer.photo.attached? %>
-            <%= cl_image_tag @offer.photo.key, width: 800, crop: :fill, class: "image_preview" %>
-          <% else %>
-            <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", class: "img-show", width: "100%" %>
-          <% end %>
-        </div>
-
-
+      <div class="p-0 col-5 d-flex img-div">
+        <% if @offer.photo.attached? %>
+          <%= cl_image_tag @offer.photo.key, width: 800, crop: :fill, class: "image_preview" %>
+        <% else %>
+          <%= image_tag "https://cdn.dribbble.com/users/1787323/screenshots/14113017/media/f8632f8c42e53263256b94e6e575c3df.png?compress=1&resize=800x600", class: "img-show", width: "100%" %>
+        <% end %>
       </div>
 
       <div class="all-grey-info col-3 mx-3">

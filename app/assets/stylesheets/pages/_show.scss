@@ -48,6 +48,10 @@
   font-size: large;
   font-weight: bold;
   color: rgb(95, 95, 95);
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .offer-title {
@@ -59,4 +63,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.img-div {
+  object-fit: cover;
+}
+
+.img-show {
+  object-fit: cover;
 }

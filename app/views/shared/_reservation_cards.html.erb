@@ -1,7 +1,7 @@
 <div class="row justify-content-left offers-container">
   <% offers.each do |offer| %>
     <% offer.bookings.each do |booking| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card m-2" style="width: 18rem;">
         <% if offer.photo.attached? %>
           <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "image_preview" %>
         <% else %>
