@@ -20,9 +20,11 @@
             <h5>Acceptée!</h5>
           <% elsif booking.status == false %>
             <h5>Refusée</h5>
-          <% else %>
+          <% elsif booking.offer.user_id == current_user.id %>
             <%= link_to "Accepter", booking_path(booking, params: {accept: "accepted"}), method: :patch, class: "btn btn-success" %>
             <%= link_to "Refuser", booking_path(booking, params: {accept: "declined"}), method: :patch, class: "btn btn-danger" %>
+          <% else %>
+            <h5>En attente de réponse...</h5>
           <% end %>
         </div>
       </div>
