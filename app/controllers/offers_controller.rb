@@ -9,11 +9,10 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @booking = Booking.new
-    @bookings       = Booking.where(offer_id: @offer.id)
-    @bookings_dates = @bookings.map do |booking|
+    @bookings_dates = Booking.where(offer: @offer).map do |booking|
       {
         from: booking.start_date,
-        to:   booking.end_date
+        to: booking.end_date,
       }
     end
   end
@@ -65,7 +64,7 @@ class OffersController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "title ILIKE :query OR item ILIKE :query OR location ILIKE :query"
+      sql_query = "title ILIKE :query OR item ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
     end
     if params[:queryLocation].present?
@@ -73,7 +72,7 @@ class OffersController < ApplicationController
       @offers = @offers.where(sql_query_location, queryLocation: "%#{params[:queryLocation]}%")
     end
     if params[:queryPrice].present?
-      sql_query_price = "price_per_day < :queryPrice"
+      sql_query_price = "price_per_day > :queryPrice"
       @offers = @offers.where(sql_query_price, queryPrice: params[:queryPrice])
     end
 
@@ -81,6 +80,7 @@ class OffersController < ApplicationController
   end
 
   def sorting
+    searching
     case params[:sort]
     when "price-up"
       @offers = @offers.order(:price_per_day)
