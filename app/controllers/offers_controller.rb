@@ -65,7 +65,7 @@ class OffersController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "title ILIKE :query OR item ILIKE :query"
+      sql_query = "title ILIKE :query OR item ILIKE :query OR location ILIKE :query"
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
     end
     if params[:queryLocation].present?
@@ -73,7 +73,7 @@ class OffersController < ApplicationController
       @offers = @offers.where(sql_query_location, queryLocation: "%#{params[:queryLocation]}%")
     end
     if params[:queryPrice].present?
-      sql_query_price = "price_per_day > :queryPrice"
+      sql_query_price = "price_per_day < :queryPrice"
       @offers = @offers.where(sql_query_price, queryPrice: params[:queryPrice])
     end
 
