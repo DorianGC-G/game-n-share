@@ -14,6 +14,8 @@
                           placeholder: "Oussa ?" %>
         <%= number_field_tag :queryPrice,
                           params[:queryPrice],
+                          min: 1,
+                          max: 1000,
                           class: "form-control my-2",
                           placeholder: "Pour combien de pépettes max par jour ?" %>
         <div class="my-3">
