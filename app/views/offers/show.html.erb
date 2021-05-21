@@ -12,12 +12,7 @@
           <% end %>
         </div>
 
-        <% if policy(@offer).edit? %>
-          <div class="row m-0 justify-content-between">
-            <%= link_to "Modifier", edit_offer_path(@offer), class: "btn btn-dark p-3 my-4 mr-2 flex-fill" %>
-            <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" }, class: "btn btn-dark p-3 my-4 ml-2 flex-fill" %>
-          </div>
-        <% end %>
+
       </div>
 
       <div class="all-grey-info col-3 mx-3">
@@ -74,6 +69,15 @@
         <% end %>
       </div>
 
+    </div>
+
+    <div class="col-5 p-0">
+      <% if policy(@offer).edit? %>
+        <div class="row m-0 justify-content-between">
+          <%= link_to "Modifier", edit_offer_path(@offer), class: "btn btn-dark p-3 my-4 mr-2 flex-fill" %>
+          <%= link_to "Supprimer", offer_path(@offer), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette offre?" }, class: "btn btn-dark p-3 my-4 ml-2 flex-fill" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="container description p-0 col-12 d-flex">
