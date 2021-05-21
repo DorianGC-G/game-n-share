@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  // width: 80%;
 
   img {
     height: 100%;
@@ -16,6 +17,11 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
+    width: 70%;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   p {
     font-size: 12px;
@@ -28,6 +34,7 @@
 
 .card-product .card-product-infos {
   height: 100%;
+  width: 80%;
   padding: 15px;
   h2 {
     margin-bottom: 8px;
