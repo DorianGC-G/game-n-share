@@ -56,7 +56,7 @@ class OffersController < ApplicationController
 
   def searching
 
-    if (params[:query] == "") & (params[:queryLocation] == "") & (params[:queryPrice] == "")
+    if (params[:query] == "") & (params[:queryLocation] == "") & (params[:queryPrice] == "") & (params[:sort] == "")
       redirect_to offers_path
       flash.alert = "Recherche vide !"
     else

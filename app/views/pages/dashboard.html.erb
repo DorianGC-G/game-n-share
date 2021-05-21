@@ -1,22 +1,13 @@
 <div class="container">
   <div class="first-box px-0">
     <h1>Mes annonces</h1>
-    <div class="sorting d-flex justify-content-end">
-      <div class="justify-content-between">
-        <%= link_to dashboard_path(sort: "price-up") do %>
-          <i class="fas fa-chevron-up"></i>
-        <% end %>
-
-        <%= link_to dashboard_path(sort: "price-down") do %>
-          <i class="fas fa-chevron-down"></i>
-        <% end %>
-      </div>
-    </div>
     <%= render "shared/simple_cards_index", offers: Offer.where(user: current_user) %>
   </div>
   <div class="first-box px-0">
     <h1>Mes demandes envoyées</h1>
     <%= render "shared/reservation_cards", offers: @offers %>
+  </div>
+  <div class="first-box px-0">
     <h1>Mes demandes reçues</h1>
     <%= render "shared/reservation_cards", offers: @offers_received %>
   </div>
