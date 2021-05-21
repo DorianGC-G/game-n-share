@@ -12,11 +12,12 @@
         <% end %>
       </div>
     </div>
-
-    <%= render "shared/simple_cards_index", offers: @offers %>
+    <%= render "shared/simple_cards_index", offers: Offer.where(user: current_user) %>
   </div>
   <div class="first-box px-0">
-    <h1>Mes dernières demandes</h1>
+    <h1>Mes demandes envoyées</h1>
     <%= render "shared/reservation_cards", offers: @offers %>
+    <h1>Mes demandes reçues</h1>
+    <%= render "shared/reservation_cards", offers: @offers_received %>
   </div>
 </div>
